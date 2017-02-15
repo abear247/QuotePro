@@ -8,7 +8,10 @@
 
 import UIKit
 
+
 class QuoteView: UIView {
+    //MARK: Properties
+    let manager = QuoteModel.sharedInstance
     
     //MARK: Properties
     @IBOutlet weak var quoteImageView: UIImageView!
@@ -20,7 +23,31 @@ class QuoteView: UIView {
         authorLabel.text = quote.author
     }
     
-    //MARK: Properties
-    @IBOutlet weak var generateQuoteButton: UIButton!
-    @IBOutlet weak var generateImageButton: UIButton!
+    //MARK: Actions
+    @IBAction func generateQuoteButton(_ sender: UIButton) {
+        manager.generateQuote{
+            (quoteObject: QuoteObject) in
+            self.quoteLabel.text = quoteObject.quote
+            self.authorLabel.text = quoteObject.author
+        }
+    }
+
+    @IBAction func generateNewImage(_ sender: UIButton) {
+        manager.generateImage {
+            (photo) in
+            self.quoteImageView.image = photo.image
+        }
+    }
+    @IBAction func saveButton(_ sender: UIButton) {
+        guard let photo = quoteImageView.image else{
+            return
+        }
+        guard let quoteText = quoteLabel.text,let authorText = authorLabel.text else{
+            return
+        }
+        let quote = QuoteObject.init(quote: quoteText,author: authorText)
+        manager.photos.append(PhotoObject.init(image: photo))
+        manager.quotes.append(quote)
+    }
+
 }

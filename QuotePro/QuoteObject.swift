@@ -13,7 +13,7 @@ class QuoteObject: NSObject {
     let author: String
     
     init(quote: String, author: String){
-        self.quote = "quote"
-        self.author = "author"
+        self.quote = quote
+        self.author = author
     }
 }

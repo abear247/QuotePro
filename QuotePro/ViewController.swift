@@ -20,12 +20,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         // Swift
-       
-        
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
         if let objects = Bundle.main.loadNibNamed("QuoteView", owner: self, options: nil),
             let view = objects.first {
             // set up view in view hierarchy

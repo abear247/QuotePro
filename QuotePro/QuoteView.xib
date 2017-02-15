@@ -15,63 +15,80 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1a6-77-rsV">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1a6-77-rsV">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="667" id="0Ba-Vc-yrp"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVy-EI-NrY">
-                    <rect key="frame" x="152.5" y="157" width="70" height="32"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVy-EI-NrY">
+                    <rect key="frame" x="0.0" y="144" width="375" height="45"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="36"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                     <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <size key="shadowOffset" width="-2" height="-2"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTE-wJ-6OR">
-                    <rect key="frame" x="155.5" y="420" width="65" height="27.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <rect key="frame" x="123" y="420" width="129" height="53.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="43"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <size key="shadowOffset" width="-2" height="-2"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDh-dv-Ej6">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bM-5r-Oq8">
                     <rect key="frame" x="16" y="617" width="139" height="30"/>
                     <state key="normal" title="Generate new quote">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="generateQuoteButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="F8r-fn-gOh"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJs-mu-zBB">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D0c-f0-Zwk">
                     <rect key="frame" x="218" y="617" width="141" height="30"/>
                     <state key="normal" title="Generate new image">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <connections>
+                        <action selector="generateNewImage:" destination="iN0-l3-epB" eventType="touchUpInside" id="k4o-mH-JP4"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAE-Lf-cIh">
+                    <rect key="frame" x="170.5" y="585" width="34" height="30"/>
+                    <state key="normal" title="Save">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="saveButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="2MQ-75-FhU"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="zJs-mu-zBB" firstAttribute="top" secondItem="1a6-77-rsV" secondAttribute="bottom" constant="-50" id="5Ew-lN-Cjk"/>
-                <constraint firstItem="zJs-mu-zBB" firstAttribute="leading" secondItem="1a6-77-rsV" secondAttribute="trailing" constant="-157" id="9PT-7F-YVI"/>
+                <constraint firstItem="kAE-Lf-cIh" firstAttribute="centerX" secondItem="1a6-77-rsV" secondAttribute="centerX" id="0X2-OH-ckq"/>
+                <constraint firstItem="D0c-f0-Zwk" firstAttribute="leading" secondItem="1a6-77-rsV" secondAttribute="trailing" constant="-157" id="3q8-qp-OW8"/>
+                <constraint firstItem="yVy-EI-NrY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="GKm-2r-A9o"/>
                 <constraint firstAttribute="trailing" secondItem="1a6-77-rsV" secondAttribute="trailing" id="LLt-YL-Tbt"/>
-                <constraint firstItem="1a6-77-rsV" firstAttribute="leading" secondItem="rDh-dv-Ej6" secondAttribute="trailing" constant="-155" id="NDF-Pr-omv"/>
+                <constraint firstAttribute="trailing" secondItem="yVy-EI-NrY" secondAttribute="trailing" id="QGw-f3-J0w"/>
+                <constraint firstItem="kAE-Lf-cIh" firstAttribute="top" secondItem="1a6-77-rsV" secondAttribute="bottom" constant="-82" id="a42-nz-yj9"/>
                 <constraint firstItem="yVy-EI-NrY" firstAttribute="centerX" secondItem="1a6-77-rsV" secondAttribute="centerX" id="eO4-rl-FEI"/>
+                <constraint firstItem="D0c-f0-Zwk" firstAttribute="top" secondItem="1a6-77-rsV" secondAttribute="bottom" constant="-50" id="fje-kS-BjN"/>
                 <constraint firstItem="1a6-77-rsV" firstAttribute="top" secondItem="yVy-EI-NrY" secondAttribute="bottom" constant="-189" id="gXs-wX-NxY"/>
-                <constraint firstItem="rDh-dv-Ej6" firstAttribute="top" secondItem="1a6-77-rsV" secondAttribute="bottom" constant="-50" id="gwu-nz-fU0"/>
                 <constraint firstItem="iTE-wJ-6OR" firstAttribute="centerX" secondItem="1a6-77-rsV" secondAttribute="centerX" id="hdP-nU-uF8"/>
                 <constraint firstItem="1a6-77-rsV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="iMu-wk-dxj"/>
+                <constraint firstItem="4bM-5r-Oq8" firstAttribute="top" secondItem="1a6-77-rsV" secondAttribute="bottom" constant="-50" id="mm7-lt-z4z"/>
                 <constraint firstItem="iTE-wJ-6OR" firstAttribute="top" secondItem="yVy-EI-NrY" secondAttribute="bottom" constant="231" id="pIi-oO-K7B"/>
                 <constraint firstItem="1a6-77-rsV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qgF-4h-0cE"/>
+                <constraint firstItem="1a6-77-rsV" firstAttribute="leading" secondItem="4bM-5r-Oq8" secondAttribute="trailing" constant="-155" id="tQt-Le-VZo"/>
             </constraints>
             <connections>
                 <outlet property="authorLabel" destination="iTE-wJ-6OR" id="fzn-Hp-y0H"/>
-                <outlet property="generateImageButton" destination="zJs-mu-zBB" id="6wi-dw-wdM"/>
-                <outlet property="generateQuoteButton" destination="rDh-dv-Ej6" id="cgE-5G-NmS"/>
                 <outlet property="quoteImageView" destination="1a6-77-rsV" id="ELk-zQ-RKh"/>
                 <outlet property="quoteLabel" destination="yVy-EI-NrY" id="Men-cs-g4o"/>
             </connections>
-            <point key="canvasLocation" x="33.5" y="54.5"/>
+            <point key="canvasLocation" x="151.5" y="175.5"/>
         </view>
     </objects>
 </document>

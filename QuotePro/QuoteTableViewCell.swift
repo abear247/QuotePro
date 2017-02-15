@@ -9,6 +9,11 @@
 import UIKit
 
 class QuoteTableViewCell: UITableViewCell {
+    
+    //MARK: Properties
+    
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var quoteLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

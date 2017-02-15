@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="412" height="111"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="412" height="110.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="412" height="110"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdU-O3-GSC">
@@ -44,6 +44,8 @@
             </tableViewCellContentView>
             <gestureRecognizers/>
             <connections>
+                <outlet property="authorLabel" destination="jdU-O3-GSC" id="j8q-IH-sT3"/>
+                <outlet property="quoteLabel" destination="kWM-J4-NUi" id="Xwz-yE-HRk"/>
                 <outletCollection property="gestureRecognizers" destination="oOh-nx-gBo" appends="YES" id="F3e-4M-MUg"/>
             </connections>
             <point key="canvasLocation" x="-69" y="36.5"/>
