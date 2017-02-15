@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="QuoteView" customModule="QuotePro" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1a6-77-rsV">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="667" id="0Ba-Vc-yrp"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVy-EI-NrY">
+                    <rect key="frame" x="152.5" y="157" width="70" height="32"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <size key="shadowOffset" width="-2" height="-2"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTE-wJ-6OR">
+                    <rect key="frame" x="155.5" y="420" width="65" height="27.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <size key="shadowOffset" width="-2" height="-2"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDh-dv-Ej6">
+                    <rect key="frame" x="16" y="617" width="139" height="30"/>
+                    <state key="normal" title="Generate new quote">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJs-mu-zBB">
+                    <rect key="frame" x="218" y="617" width="141" height="30"/>
+                    <state key="normal" title="Generate new image">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="zJs-mu-zBB" firstAttribute="top" secondItem="1a6-77-rsV" secondAttribute="bottom" constant="-50" id="5Ew-lN-Cjk"/>
+                <constraint firstItem="zJs-mu-zBB" firstAttribute="leading" secondItem="1a6-77-rsV" secondAttribute="trailing" constant="-157" id="9PT-7F-YVI"/>
+                <constraint firstAttribute="trailing" secondItem="1a6-77-rsV" secondAttribute="trailing" id="LLt-YL-Tbt"/>
+                <constraint firstItem="1a6-77-rsV" firstAttribute="leading" secondItem="rDh-dv-Ej6" secondAttribute="trailing" constant="-155" id="NDF-Pr-omv"/>
+                <constraint firstItem="yVy-EI-NrY" firstAttribute="centerX" secondItem="1a6-77-rsV" secondAttribute="centerX" id="eO4-rl-FEI"/>
+                <constraint firstItem="1a6-77-rsV" firstAttribute="top" secondItem="yVy-EI-NrY" secondAttribute="bottom" constant="-189" id="gXs-wX-NxY"/>
+                <constraint firstItem="rDh-dv-Ej6" firstAttribute="top" secondItem="1a6-77-rsV" secondAttribute="bottom" constant="-50" id="gwu-nz-fU0"/>
+                <constraint firstItem="iTE-wJ-6OR" firstAttribute="centerX" secondItem="1a6-77-rsV" secondAttribute="centerX" id="hdP-nU-uF8"/>
+                <constraint firstItem="1a6-77-rsV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="iMu-wk-dxj"/>
+                <constraint firstItem="iTE-wJ-6OR" firstAttribute="top" secondItem="yVy-EI-NrY" secondAttribute="bottom" constant="231" id="pIi-oO-K7B"/>
+                <constraint firstItem="1a6-77-rsV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qgF-4h-0cE"/>
+            </constraints>
+            <connections>
+                <outlet property="authorLabel" destination="iTE-wJ-6OR" id="fzn-Hp-y0H"/>
+                <outlet property="generateImageButton" destination="zJs-mu-zBB" id="6wi-dw-wdM"/>
+                <outlet property="generateQuoteButton" destination="rDh-dv-Ej6" id="cgE-5G-NmS"/>
+                <outlet property="quoteImageView" destination="1a6-77-rsV" id="ELk-zQ-RKh"/>
+                <outlet property="quoteLabel" destination="yVy-EI-NrY" id="Men-cs-g4o"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
+        </view>
+    </objects>
+</document>
