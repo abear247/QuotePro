@@ -12,24 +12,24 @@ class QuoteTableViewController: UITableViewController {
     
     //MARK: Properties
     let completeQuotes = [(QuoteObject,PhotoObject)]()
-
+    let manager = QuoteModel.sharedInstance
+    let nc = NotificationCenter.default
     override func viewDidLoad() {
         super.viewDidLoad()
-        let nib = UINib(nibName: "QouteTableViewCell", bundle: nil)
+        let nib = UINib(nibName: "QuoteTableViewCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: "nibCell")
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+//        nc.addObserver(forName: NSNotification.Name(rawValue: "share"), object: nil, queue: nil) {
+//            notification in
+//            self.tableView.reloadData()
+//            
+//        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.tableView.reloadData()
     }
-
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -37,7 +37,7 @@ class QuoteTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return completeQuotes.count
+        return manager.quotes.count
     }
 
     
@@ -45,13 +45,23 @@ class QuoteTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "nibCell", for: indexPath)
 
         if let customCell = cell as? QuoteTableViewCell{
-            customCell.authorLabel.text = completeQuotes[indexPath.row].0.author
-            customCell.quoteLabel.text = completeQuotes[indexPath.row].0.quote
+            customCell.authorLabel.text = manager.quotes[indexPath.row].author
+            customCell.quoteLabel.text = manager.quotes[indexPath.row].quote
             
         }
 
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let photo = manager.photos[indexPath.row]
+        let quote = manager.quotes[indexPath.row]
+        let activityItems = [photo,quote]
+        let activityViewController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        self.present(activityViewController, animated: true)
+    }
+    
+    
     
 
     /*

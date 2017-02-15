@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     //MARK: Properties
     @IBOutlet weak var storyboardQuoteView: QuoteView!
  
-   
+   let nc = NotificationCenter.default
     
 
     override func viewDidLoad() {

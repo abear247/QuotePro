@@ -12,7 +12,7 @@ import UIKit
 class QuoteView: UIView {
     //MARK: Properties
     let manager = QuoteModel.sharedInstance
-    
+    let nc = NotificationCenter.default
     //MARK: Properties
     @IBOutlet weak var quoteImageView: UIImageView!
     @IBOutlet weak var quoteLabel: UILabel!
@@ -39,15 +39,19 @@ class QuoteView: UIView {
         }
     }
     @IBAction func saveButton(_ sender: UIButton) {
-        guard let photo = quoteImageView.image else{
+        guard let photo = quoteImageView.image as UIImage! else{
             return
         }
-        guard let quoteText = quoteLabel.text,let authorText = authorLabel.text else{
+        guard let quoteText = quoteLabel.text as String!,let authorText = authorLabel.text as String! else{
             return
         }
         let quote = QuoteObject.init(quote: quoteText,author: authorText)
         manager.photos.append(PhotoObject.init(image: photo))
         manager.quotes.append(quote)
+        nc.post(name:Notification.Name(rawValue:"update"),
+                object: nil,
+                userInfo: nil)
+        
     }
 
 }

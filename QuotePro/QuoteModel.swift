@@ -10,8 +10,8 @@ import UIKit
 
 class QuoteModel: NSObject {
     //MARK: Properties
-    var quotes: [QuoteObject]!
-    var photos: [PhotoObject]!
+    var quotes = [QuoteObject]()
+    var photos = [PhotoObject]()
     
     //MARK: Singleton
     static let sharedInstance : QuoteModel = {
